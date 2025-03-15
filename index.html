@@ -31,42 +31,6 @@
   </head>
   <body>
 
-    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More Research
-            </a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="https://huggingface.co/datasets/MMMU/MMMU_Pro">
-                <b>MMMU-Pro</b> <span style="font-size:18px; display: inline; margin-left: 5px;">🔥</span>
-              </a>
-              <a class="navbar-item" href="https://tiger-ai-lab.github.io/MAmmoTH/">
-                MAmmoTH
-              </a>
-              <a class="navbar-item" href="https://osu-nlp-group.github.io/TableLlama/">
-                TableLlama
-              </a>
-              <a class="navbar-item" href="https://osu-nlp-group.github.io/MagicBrush/">
-                MagicBrush
-              </a>
-              <a class="navbar-item" href="https://osu-nlp-group.github.io/Mind2Web/">
-                Mind2Web
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav> -->
-
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
@@ -111,17 +75,6 @@
       </div>
     </section>
 
-    <!-- <section class="hero teaser">
-      <div class="container is-max-desktop has-text-centered">
-        <img src="static/images/overview_mmlu.Jpeg" alt="geometric reasoning">
-        <p>Overview of the MMMU dataset. MMMU presents four challenges:
-          1) <b>comprehensiveness</b>: 11.5K college-level problems across six broad disciplines and 30 college subjects;
-          2) highly <b>heterogeneous</b> image types;
-          3) <b>interleaved</b> text and images;
-          4) <b>expert-level</b> perception and reasoning rooted in deep subject knowledge.
-        </p>
-      </div>
-    </section> -->
     <section class="section">
       <div class="container" style="margin-bottom: 2vh;">
         <div class="columns is-centered has-text-centered">
@@ -129,7 +82,7 @@
             <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
               <p>
-                <b>Comming soon: Release CSVQA benchmark and publish sub-domain model evaluation results</b>
+                <b>🔥[Comming soon]: Release CSVQA benchmark and publish sub-domain model evaluation results</b>
               </p>
               <p>
                 <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
@@ -153,15 +106,6 @@
         <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <!-- <h2 class="title is-3">🔔News</h2>
-            <div class="content has-text-justified">
-              <p>
-                <b>Comming soon: Release CSVQA benchmark and publish sub-domain model evaluation results</b>
-              </p>
-              <p>
-                <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
-              </p>
-            </div> -->
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
@@ -184,6 +128,68 @@
                 <li>question_text(string): 问题描述(含Markdown公式)</li>
                 <li>image_path(string): 关联图像路径</li>
               </ul>
+            </div>
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate various models including LLMs and LMMs.
+                In each type, we consider both closed- and open-source models.
+                Our evaluation is conducted under a zero-shot setting to assess the capability of models to generate accurate answers without fine-tuning or few-shot demonstrations on our benchmark.
+                For all models, we use the default prompt provided by each model for multi-choice or open QA, if available.
+                If models do not provide prompts for task types in MMMU, we conduct prompt engineering on the validation set and use the most effective prompt for the later zero-shot experiment.
+              </p>
+            </div>
+            <br>
+            <div class="model-labels-container">
+              <span class="leaderboard-label human_expert">Human Expert</span>
+              <span class="leaderboard-label open_source">Open-Source</span>
+              <span class="leaderboard-label proprietary">Proprietary</span>
+            </div>
+            <br>
+            <div class="content has-text-centered">
+              <p>
+                Click on MMMU-Pro, MMMU (Val) or MMMU (Test) to expand detailed results.
+              </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="mmmu-table">
+                  <thead>
+                    <tr>
+                      <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>
+                      <th class="pro-details-cell clickable" colspan="1">MMMU-Pro</th>
+                      <th class="val-details-cell clickable" colspan="1">MMMU(Val)</th>
+                      <th class="test-details-cell clickable" colspan="1">MMMU(Test)</th>
+                    </tr>
+                    <tr>
+                      <th class="sortable clickable" data-sort="string">Name</th>
+                      <th class="clickable" data-sort="string">Size</th>
+                      <th class="sortable clickable" data-sort="date">Date</th>
+                      <th class="sortable clickable pro-overall" data-sort="number">Overall</th>
+                      <th class="hidden pro-details sortable clickable" data-sort="number">Vision</th>
+                      <th class="hidden pro-details sortable clickable" data-sort="number">Standard</th>
+                      <th class="sortable clickable val-overall" data-sort="number">Overall</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Art & Design</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Business</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Science</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Health & Medicine</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                      <th class="sortable clickable test-overall" data-sort="number">Overall</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Art & Design</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Business</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Science</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Health & Medicine</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Table body will be populated dynamically -->
+                  </tbody>
+                </table>
+                <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -269,7 +275,7 @@
         <pre><code>
           @misc{skyvl2025csvqa,
             title={CSVQA: Chinese Science Visual Question Answering},
-            author={SkyVL Team},
+            author={Skywork VL Team},
             year={2025},
             month={March},
             howpublished={\url{https://huggingface.co/Skywork}},
