@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MMMU</title>
+    <title>CSVQA</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="description"
-          content="A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI">
-    <meta name="keywords" content="MMMU, LMM, LMM Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
+          content="Chinese Science Visual Question Answering">
+    <meta name="keywords" content="CSVQA, LMM, LMM Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI</title>
+    <title> CSVQA: Chinese Science Visual Question Answering</title>
 
-    <link rel="icon" href="./static/images/mmmu_icon2.png">
+    <!-- <link rel="icon" href="./static/images/mmmu_icon2.png"> -->
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -31,7 +31,7 @@
   </head>
   <body>
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <section class="hero">
       <div class="hero-body">
@@ -73,8 +73,7 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title is-bold">
-                <img src="static/images/mmmu_icon2.png" style="width:1em;vertical-align: middle" alt="Logo"/>
-                <span class="mmmu" style="vertical-align: middle">CSVQA</span>
+                <span class="csvqa" style="vertical-align: middle">CSVQA</span>
               </h1>
               <h2 class="subtitle is-3 publication-subtitle">
                 Chinese Science Visual Question Answering
@@ -84,38 +83,16 @@
               </div>
               <br>
               <div class="is-size-5 publication-authors">
-                <span class="author-block">†Corresponding to:</span>
-                <span class="author-block"><a href="mailto:csvqa.benchmark@gmail.com">csvqa.benchmark@gmail.com</a>,</span>
+                <span class="author-block">Corresponding to:</span>
+                <span class="author-block"><a href="mailto:csvqa.benchmark@gmail.com">csvqa.benchmark@gmail.com</a></span>
+                <p>If you have any questions, please contact us! 😆</p>
               </div>
-
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://arxiv.org/abs/2311.16502" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://huggingface.co/datasets/MMMU/MMMU_Pro" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://huggingface.co/datasets/Skywork/CSVQA" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon" style="font-size:18px">🤗</span>
-                      <span>MMMU-Pro</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://huggingface.co/datasets/MMMU/MMMU" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon" style="font-size:18px">🤗</span>
-                      <span>MMMU</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/MMMU-Benchmark/MMMU" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
+                      <span>CSVQA</span>
                     </a>
                   </span>
                   <span class="link-block">
@@ -126,30 +103,6 @@
                       <span>Leaderboard</span>
                     </a>
                   </span>
-                  <span class="link-block">
-                    <a href="https://eval.ai/web/challenges/challenge-page/2179/overview" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon has-text-white">
-                        <i class="fa-solid fa-medal"></i>
-                      </span>
-                      <span>EvalAI</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://twitter.com/xiangyue96/status/1729698316554801358" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon has-text-white">
-                        <i class="fa-brands fa-x-twitter"></i>
-                      </span>
-                      <span>Twitter</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="#examples" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon has-text-white">
-                        <i class="fa-solid fa-book"></i>
-                      </span>
-                      <span>Examples</span>
-                    </a>
-                  </span>
                 </div>
               </div>
             </div>
@@ -158,7 +111,7 @@
       </div>
     </section>
 
-    <section class="hero teaser">
+    <!-- <section class="hero teaser">
       <div class="container is-max-desktop has-text-centered">
         <img src="static/images/overview_mmlu.Jpeg" alt="geometric reasoning">
         <p>Overview of the MMMU dataset. MMMU presents four challenges:
@@ -168,7 +121,7 @@
           4) <b>expert-level</b> perception and reasoning rooted in deep subject knowledge.
         </p>
       </div>
-    </section>
+    </section> -->
 
     <section class="section">
       <div class="container" style="margin-bottom: 2vh;">
@@ -178,19 +131,13 @@
             <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
               <p>
-                <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">MMMU-Pro</a>, a robust version of MMMU benchmark for multimodal AI evaluation! 🚀</b>
-              </p>
-              <p>
-                <b>🚀[2024-01-31]: We added Human Expert performance on the <a href="#leaderboard">Leaderboard</a>!🌟</b>
-              </p>
-              <p>
-                <b>🔥[2023-12-04]: Our evaluation server for the test set is now available on <a href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all submissions and look forward to your participation! 😆</b>
+                <b>🔥[2025-03-18]: We open sourced our dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA"><b>CSVQA</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
               </p>
           </div>
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-                We introduce MMMU: a new benchmark designed to evaluate multimodal models on massive multi-discipline tasks demanding college-level subject knowledge and deliberate reasoning. MMMU includes <b>11.5K</b> meticulously collected multimodal questions from college exams, quizzes, and textbooks, covering six core disciplines: Art & Design, Business, Science, Health & Medicine, Humanities & Social Science, and Tech & Engineering. These questions span <b>30</b> subjects and <b>183</b> subfields, comprising 30 highly heterogeneous image types, such as charts, diagrams, maps, tables, music sheets, and chemical structures. Unlike existing benchmarks, MMMU focuses on advanced perception and reasoning with domain-specific knowledge, challenging models to perform tasks akin to those faced by experts. Our evaluation of 14 open-source LMMs and the proprietary GPT-4V(ision) highlights the substantial challenges posed by MMMU. Even the advanced GPT-4V only achieves a 56% accuracy, indicating significant room for improvement. We believe MMMU will stimulate the community to build next-generation multimodal foundation models towards expert artificial general intelligence.
+                Chinese STEM Visual QA (CSVQA) 是一个面向多模态理科推理的高中教育数据集，包含物理、数学、化学、生物四大学科的视觉问答任务。
               </p>
             </div>
           </div>
@@ -203,8 +150,7 @@
     <section class="hero is-light is-small">
       <div class="hero-body has-text-centered">
         <h1 class="title is-1 mmmu">
-          <img src="static/images/mmmu_icon2.png" alt="Logo" class="mmmu-logo"/>
-          <span class="mmmu">MMMU Benchmark</span>
+          <span class="mmmu">CSVQA Benchmark</span>
         </h1>
       </div>
     </section>
