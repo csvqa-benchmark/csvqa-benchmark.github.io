@@ -79,7 +79,7 @@
                 Chinese Science Visual Question Answering
               </h2>
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><strong>SkyVL Team</strong></span>
+                <span class="author-block"><strong>Skywork VL Team</strong></span>
               </div>
               <br>
               <div class="is-size-5 publication-authors">
@@ -122,47 +122,6 @@
         </p>
       </div>
     </section> -->
-
-    <section class="section">
-      <div class="container" style="margin-bottom: 2vh;">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">🔔News</h2>
-            <div class="content has-text-justified">
-              <p>
-                <b>🔥[2025-03-18]: We open sourced our dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA"><b>CSVQA</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
-              </p>
-            </div>
-            <h2 class="title is-3">Introduction(数据集介绍)</h2>
-            <div class="content has-text-justified">
-              <p>
-                Chinese STEM Visual QA (CSVQA) is a high school education dataset for multimodal science reasoning, including visual question answering tasks in four major subjects: physics, mathematics, chemistry, and biology.(Chinese STEM Visual QA (CSVQA) 是一个面向多模态理科推理的高中教育数据集，包含物理、数学、化学、生物四大学科的视觉问答任务。)
-              </p>
-            </div>
-            <h2 class="title is-3">Key Features(主要特点)</h2>
-            <div class="content has-text-justified">
-              <ul>
-                <li>科目范围：涵盖物理、化学、生物、数学四大学科，完全基于中国高中教材的习题。</li>
-                <li>题目类型：包括 选择题 和 开放式问题，考察模型对科学知识的深入理解和多步推理能力。</li>
-                <li>多样化图像：数据集中包含 11 种不同类型的科学图像，如函数图像、电路图、化学结构式等。</li>
-              </ul>
-            </div>
-            <h2 class="title is-3">Data Fields(数据字段)</h2>
-            <div class="content has-text-justified">
-              <ul>
-                <li>question_id(string): 唯一题号 (格式：学科代码-年份-序号)</li>
-                <li>question_text(string): 问题描述(含Markdown公式)</li>
-                <li>image_path(string): 关联图像路径</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--/ Abstract. -->
-    </div>
-    </section>
-
-    <!-- DATASET SECTION -->
     <section class="hero is-light is-small">
       <div class="hero-body has-text-centered">
         <h1 class="title is-1 csvqa">
@@ -172,80 +131,47 @@
     </section>
 
     <section class="section">
-      <div class="container">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Overview</h2>
+            <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
               <p>
-                We introduce CSVQA BenchMark
-              </p>
-              <img src="static/images/mmlu_example.Jpeg" alt="algebraic reasoning" class="center">
-              <br>
-              <p>
-                xxxx
+                <b>Comming soon: Release CSVQA benchmark and publish sub-domain model evaluation results</b>
               </p>
               <p>
-                xxxx
+                <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
               </p>
+            </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                这里介绍这个数据集是什么，怎么得来的
+                Chinese STEM Visual QA (CSVQA) is a high school education dataset for multimodal science reasoning, including visual question answering tasks in four major subjects: physics, mathematics, chemistry, and biology.
+              </p>
+            </div>
+            <h2 class="title is-3">Key Features</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>科目范围：涵盖物理、化学、生物、数学四大学科，完全基于中国高中教材的习题。</li>
+                <li>题目类型：包括 选择题 和 开放式问题，考察模型对科学知识的深入理解和多步推理能力。</li>
+                <li>多样化图像：数据集中包含 11 种不同类型的科学图像，如函数图像、电路图、化学结构式等。</li>
+              </ul>
+            </div>
+            <h2 class="title is-3">Data Fields</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>question_id(string): 唯一题号 (格式：学科代码-年份-序号)</li>
+                <li>question_text(string): 问题描述(含Markdown公式)</li>
+                <li>image_path(string): 关联图像路径</li>
+              </ul>
             </div>
           </div>
         </div>
-<!-- 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
-            <div class="content has-text-justified">
-              <p>
-                To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
-                From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense.
-                The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams,
-                tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc.
-                In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
-                In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
-              </p>
-              <div class="content has-text-centered">
-                <img src="static/images/compare.Jpeg" alt="algebraic reasoning" class="center">
-                <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="columns is-centered m-6">
-          <div class="column is-full has-text-centered content">
-            <h2 class="title is-3">Statistics</h2>
-            <div class="carousel results-carousel">
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="static/images/mmmu_subject_distribution.Jpeg" alt="algebraic reasoning" width="95%"/>
-                  <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="static/images/statistics.png" alt="arithmetic reasoning" width="40%"/>
-                  <p> Key statistics of the MMMU benchmark</p>
-                </div>
-              </div>
-              <div class="box m-5">
-                <div class="content has-text-centered">
-                  <img src="static/images/image_type_count.png" alt="arithmetic reasoning" width="80%"/>
-                  <p> Distribution of image types in the MMMU dataset</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
 
-    <!-- RESULTS SECTION -->
-    <!-- <section class="hero is-light is-small">
-      <div class="hero-body has-text-centered">
-        <h1 class="title is-1 mmmu">Experiment Results</h1>
-      </div>
-    </section> -->
 
     <section class="section">
       <div class="container">
@@ -316,65 +242,6 @@
             </div>
           </div>
         </div>
-        <!-------------------------------------------------------------------- Image Type SECTION -------------------------------------------------------------------->
-        
-        <!-------------------------------------------------------------------- Difficulty Levels SECTION -------------------------------------------------------------------->
-        <!-- <div class="columns is-centered m-6">
-          <div class="column is-full has-text-centered content">
-            <h2 class="title is-3">Different Difficulty Levels</h2>
-            <div class="content has-text-justified">
-              <p>
-                we compares the performance of selected models across three difficulty levels.
-                GPT-4V demonstrates a significantly higher proficiency, with a success rate of 76.1%, compared to opensource models in the “Easy” category.
-                When it comes to the “Medium” category, while the gap narrows, GPT-4V still leads at 55.6%.
-                The further diminishing performance gap in the “Hard” category across models indicates that as the complexity of tasks increases, the advantage of more advanced models like GPT-4V almost disappears.
-                This might reflect a current limitation in handling expert-level challenging queries even for the most advanced models.
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <p>Click legend to switch the comparison chart.</p>
-            </div>
-            <div class="content has-text-centered">
-              <canvas id="difficulty_level_chart"></canvas>
-              <p>Result decomposition across question difficulty levels.</p>
-            </div>
-          </div>
-        </div> -->
-      <!-------------------------------------------------------------------- Single VS Multiple image SECTION -------------------------------------------------------------------->
-        <!-- <div class="columns is-centered m-6">
-        <div class="column is-full has-text-centered content">
-          <h2 class="title is-3">Single Image VS Multiple Image</h2>
-          <div class="content has-text-centered">
-            <div class="content has-text-centered">
-              <p>Click legend to switch the comparison chart.</p>
-            </div>
-            <canvas id="single_vs_multiple_chart"></canvas>
-            <p>Result decomposition across single image and multiple image tasks.</p>
-          </div>
-        </div>
-        </div> -->
-      <!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
-        <!-- <div class="columns is-centered m-6">
-          <div class="column is-full has-text-centered content">
-            <h2 class="title is-3">Error Analysis</h2>
-            <div class="content has-text-justified">
-              <p>
-                We delve into the analysis of errors by GPT-4V, a pivotal aspect for understanding its operational capabilities and limitations.
-                This analysis serves not only to identify the model's current shortcomings but also to guide future enhancements in its design and training.
-                We meticulously examine 150 randomly sampled error instances from GPT-4V's predictions.
-                These instances are analyzed by expert annotators who identify the root causes of mispredictions based on their knowledge and the golden explanations if available.
-                The distribution of these errors is illustrated in Figure, and a selection of 100 notable cases, along with detailed analyses, is included in the Appendix.
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <img src="static/images/error_distribution_1.Jpeg" alt="error distribution" width="25%">
-              <p> Error distribution over 150 annotated GPT-4V errors.</p>
-            </div>
-          </div>
-        </div> -->
-      <!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
-       
-      <!-------------------------------------------------------------------- Correct Example -------------------------------------------------------------------->
       </div>
     </section>
 
