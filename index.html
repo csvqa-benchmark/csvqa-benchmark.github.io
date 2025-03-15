@@ -79,12 +79,11 @@
                 Chinese Science Visual Question Answering
               </h2>
               <div class="is-size-5 publication-authors">
-                <img src="static/images/logo.Jpeg" alt="algebraic reasoning" class="center">
                 <span class="author-block"><strong>SkyVL Team</strong></span>
               </div>
               <br>
               <div class="is-size-5 publication-authors">
-                <span class="author-block">Corresponding to:</span>
+                <span class="author-block">Email:</span>
                 <span class="author-block"><a href="mailto:csvqa.benchmark@gmail.com">csvqa.benchmark@gmail.com</a></span>
                 <p>If you have any questions, please contact us! 😆</p>
               </div>
@@ -134,12 +133,28 @@
               <p>
                 <b>🔥[2025-03-18]: We open sourced our dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA"><b>CSVQA</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
               </p>
-          </div>
-            <h2 class="title is-3">Introduction</h2>
+            </div>
+            <h2 class="title is-3">Introduction(数据集介绍)</h2>
             <div class="content has-text-justified">
               <p>
-                Chinese STEM Visual QA (CSVQA) 是一个面向多模态理科推理的高中教育数据集，包含物理、数学、化学、生物四大学科的视觉问答任务。
+                Chinese STEM Visual QA (CSVQA) is a high school education dataset for multimodal science reasoning, including visual question answering tasks in four major subjects: physics, mathematics, chemistry, and biology.(Chinese STEM Visual QA (CSVQA) 是一个面向多模态理科推理的高中教育数据集，包含物理、数学、化学、生物四大学科的视觉问答任务。)
               </p>
+            </div>
+            <h2 class="title is-3">Key Features(主要特点)</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>科目范围：涵盖物理、化学、生物、数学四大学科，完全基于中国高中教材的习题。</li>
+                <li>题目类型：包括 选择题 和 开放式问题，考察模型对科学知识的深入理解和多步推理能力。</li>
+                <li>多样化图像：数据集中包含 11 种不同类型的科学图像，如函数图像、电路图、化学结构式等。</li>
+              </ul>
+            </div>
+            <h2 class="title is-3">Data Fields(数据字段)</h2>
+            <div class="content has-text-justified">
+              <ul>
+                <li>question_id(string): 唯一题号 (格式：学科代码-年份-序号)</li>
+                <li>question_text(string): 问题描述(含Markdown公式)</li>
+                <li>image_path(string): 关联图像路径</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -163,20 +178,20 @@
             <h2 class="title is-3">Overview</h2>
             <div class="content has-text-justified">
               <p>
-                We introduce the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark, a novel benchmark meticulously curated to assess the expert-level multimodal understanding capability of foundation models across a broad scope of tasks. Covering subjects across disciplines, including Art, Business, Health & Medicine, Science, Humanities & Social Science, and Tech & Engineering, and over subfields. The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials.
+                We introduce CSVQA BenchMark
               </p>
               <img src="static/images/mmlu_example.Jpeg" alt="algebraic reasoning" class="center">
               <br>
               <p>
-                 MMMU is designed to measure three essential skills in LMMs: perception, knowledge, and reasoning. Our aim is to evaluate how well these models can not only perceive and understand information across different modalities but also apply reasoning with subject-specific knowledge to derive the solution.
+                xxxx
               </p>
               <p>
-                Our MMMU benchmark introduces key challenges to multimodal foundation models, as detailed in a figure. Among these, we particularly highlight the challenge stemming from the requirement for both expert-level visual perceptual abilities and deliberate reasoning with subject-specific knowledge. This challenge is vividly illustrated through our tasks, which not only demand the processing of various heterogeneous image types but also necessitate a model's adeptness in using domain-specific knowledge to deeply understand both the text and images and to reason. This goes significantly beyond basic visual perception, calling for an advanced approach that integrates advanced multimodal analysis with domain-specific knowledge.
+                xxxx
               </p>
             </div>
           </div>
         </div>
-
+<!-- 
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
@@ -195,9 +210,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="columns is-centered m-6">
+        <!-- <div class="columns is-centered m-6">
           <div class="column is-full has-text-centered content">
             <h2 class="title is-3">Statistics</h2>
             <div class="carousel results-carousel">
@@ -221,7 +236,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 
