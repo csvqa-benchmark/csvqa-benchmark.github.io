@@ -61,7 +61,7 @@
                   <span class="link-block">
                     <a href="https://csvqa-benchmark.github.io" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon" style="font-size:18px">🤗</span>
-                      <span>CSVQA</span>
+                      <span>CSVQA(Comming Soon)</span>
                     </a>
                   </span>
                   <span class="link-block">
@@ -89,47 +89,47 @@
             <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
               <p>
-                <b>🔥[Comming soon]: Release CSVQA benchmark and publish sub-domain model evaluation results</b>
+                <b>🔥[Coming Soon]: Release the CSVQA benchmark and publish evaluation results for sub-domain models.</b>
               </p>
               <p>
-                <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. And added some models performance on the <a href="#leaderboard">Leaderboard</a></b>
+                <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. added initial model performance results to the <a href="#leaderboard">Leaderboard.</a></b>
               </p>
             </div>
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-               Chinese STEM Visual QA (CSVQA) is a high school education benchmark test set for multimodal science reasoning, including visual question answering tasks in four major subjects: <b>physics, mathematics, chemistry, and biology</b>. It aims to evaluate the performance of large-scale visual language models in complex tasks that require rigorous scientific reasoning. CSVQA contains 12 different types of images, including <b>tables, charts, diagrams, flow charts, microscopic images, molecular models, chemical structures, geometric figures, photographs, paintings, mechanical diagrams and circuit diagrams</b>.The dataset contains open-ended and selective questions. Unlike existing benchmark datasets that only focus on basic perception capabilities or low-difficulty text comprehension, CSVQA places special emphasis on the model's recognition, understanding, and reasoning capabilities in science subjects, especially the challenges faced when processing Chinese content.
+               Chinese STEM Visual QA (CSVQA) is a high school education benchmark test set for multimodal science reasoning, including visual question answering tasks in four disciplines: <b>physics, mathematics, chemistry, and biology</b>. It aims to evaluate the performance of large-scale visual language models in complex tasks that require rigorous scientific reasoning. CSVQA contains 12 different types of images, including <b>tables, charts, diagrams, flowcharts, microscopic images, molecular models, chemical structures, geometric shapes, photos, paintings, mechanics diagrams, and circuit diagrams</b>.The dataset contains open-ended and selective questions. Unlike existing benchmark datasets that only focus on basic perception capabilities or low-difficulty text comprehension, CSVQA places special emphasis on the model's recognition, understanding, and reasoning capabilities in science subjects, especially the challenges faced when processing Chinese content.
               </p>
               <p>
-                  This benchmark proposes a cross-disciplinary multimodal association reasoning task, requiring the model to collaboratively process heterogeneous modal data in a single problem scenario and establish cross-modal semantic associations. This type of design highly restores the real cognitive process of "experimental data analysis + theoretical derivation and verification" in Chinese high school science education.We evaluated the VLMs that need to be supplemented, and the experimental results show that CSVQA-Hard can effectively distinguish the performance of models in complex scientific reasoning tasks, providing an important reference for the further development of multimodal models in the scientific field.
+                This benchmark proposes a cross-disciplinary multimodal reasoning task where models must integrate heterogeneous data modalities and establish cross-modal semantic associations. Such a design closely mirrors the authentic cognitive process of "experimental data analysis + theoretical derivation" in Chinese high school science education.
               </p>
               <p>
                 We plan to release two versions
                 <br>
                 <b>CSVQA-Hard:</b> is a pilot version of the CSVQA, which contains 30 difficult multi-modal science questions.
                 <br>
-                <b>CSVQA:</b> the official version of CSVQA, which contains 500 multi-modal questions
+                <b>CSVQA:</b> the full version of the CSVQA benchmark (coming soon) will further expand to include even more diverse question types and interdisciplinary challenges.
               </p>
             </div>
             <h2 class="title is-3">Dataset Source</h2>
             <div class="content has-text-justified">
               <p>
-                  This study uses a dynamic semantic alignment method based on a large language model, which significantly improves data processing efficiency compared to traditional rule matching and ensures high quality and rigor of the data. The exercises in the dataset are all from high school textbooks and college entrance examination questions.
+                Our data collection leverages a dynamic semantic alignment approach based on large language models, which significantly improves processing efficiency over traditional rule-based methods while ensuring high quality and rigor. The questions in our dataset are sourced from authoritative high school textbooks and Gaokao (national college entrance exam) papers.
               </p>
-              <p><b>OCR:</b> By structuring the original document and introducing the OCR mechanism, the graphic content is converted into a standardized format. During this process, a labeling team of more than 10 people was established and a double verification mechanism was established.</p>
-              <p><b>Semantic alignment:</b> To achieve accurate matching between questions and answers, the team designed an automatic alignment process based on a large language model, used LLM to perform semantic association analysis, and established a preliminary mapping relationship by calculating the similarity of context vectors.</p>
-              <p><b>Manual screening:</b> manual verification is used to check the correspondence in complex situations such as multiple pages across topics and mixed text and graphics.</p>
-              <p><b>Review output:</b> The final data was produced after three rounds of independent review, including format compliance check (schema validation), content completeness confirmation (completeness of question-answer-image triples), and topic accuracy review (sampling validation).</p>
+              <p><b>OCR Processing:</b> We begin by structurally processing the original documents and integrating OCR techniques to convert both textual and graphical content into standardized formats. During this stage, a team of over 10 annotators is organized, and a dual verification mechanism is implemented to ensure high extraction accuracy.</p>
+              <p><b>Semantic Alignment:</b> To achieve precise matching between questions and answers, our team has designed an automatic alignment pipeline based on large language models. Using LLMs for semantic association analysis, we compute contextual embedding similarities to establish an initial mapping between question texts and candidate answer regions.</p>
+              <p><b>Manual Screening:</b> We then conduct thorough manual verification, focusing on complex scenarios such as multi-page questions and mixed text-image layouts, to ensure accurate correspondence between the components.</p>
+              <p><b>Multi-round Review and Finalization:</b> The dataset undergoes three independent rounds of review, including format compliance checks (via schema validation), content integrity confirmation (ensuring the completeness of question-answer-image triplets), and subject accuracy audits (through random sampling).</p>
             </div>
             <h2 class="title is-3">Key Features</h2>
             <div class="content has-text-justified">
               <p>
-                <p><b>Subject range:</b> covers the four major subjects of physics, chemistry, biology and mathematics, and is completely based on exercises from Chinese high school textbooks.</p>
-                <p><b>Question types:</b> including multiple-choice questions and open-ended questions, which test the model's in-depth understanding of scientific knowledge and multi-step reasoning ability.</p>  
-                <p><b>Diverse images:</b> The dataset contains 12 different types of scientific images, such as function images, circuit diagrams, chemical structures, etc.</p>
-                <p><b>Rich analysis:</b> The data contains standard answers and detailed analysis to help the model perform supervised learning and self-supervised learning.</p>
-                <p><b>High-quality annotation:</b> All data are proofread by professional annotators to ensure data accuracy.</p>
-                <p><b>Model benchmark:</b> Currently, 300 SOTA models have been tested on this dataset and performed excellently.</p>
+                <p><b>Disciplines Covered:</b> Encompasses four major subjects—physics, chemistry, biology, and mathematics—based entirely on high school textbooks.</p>
+                <p><b>Question Types:</b> Includes both multiple-choice and open-ended questions, designed to assess in-depth understanding and multi-step reasoning in scientific knowledge.</p>  
+                <p><b>Diverse Images Types:</b> Contains 12 distinct types of scientific images such as function plots, circuit diagrams, and chemical structures.</p>
+                <p><b>Rich Explanations:</b> Each question comes with standard answers and detailed explanations, supporting both supervised and self-supervised learning.</p>
+                <p><b>High-Quality Annotation:</b> All data entries are meticulously verified by professional annotators to ensure accuracy.</p>
+                <p><b>Model Benchmarking:</b> To date, (to be determined) state-of-the-art models have been evaluated on this dataset.</p>
               </p>
             </div>
           </div>
@@ -208,7 +208,7 @@
             <h2 class="title is-3" id="leaderboard">Leaderboard on CSVQA</h2>
             <div class="content has-text-centered">
               <p>
-                Accuracy scores on the CSVQA(500 examples)
+                Accuracy scores on the CSVQA(Comming Soon)
               </p>
             </div>
             <table class="js-sort-table" id="results">
@@ -249,8 +249,8 @@
         <h2 class="title is-3 has-text-centered">BibTeX</h2>
         <pre><code>
           @misc{skyvl2025csvqa,
-            title={CSVQA: Chinese Science Visual Question Answering},
-            author={Skywork VL Team},
+            title={CSVQA: Chinese STEM Visual Question Answering},
+            author={Skywork-VL Team},
             year={2025},
             month={March},
             howpublished={\url{https://huggingface.co/Skywork}},
@@ -271,6 +271,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>
