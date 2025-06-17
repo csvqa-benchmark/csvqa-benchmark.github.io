@@ -53,16 +53,27 @@
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://huggingface.co/datasets/Skywork/CSVQA" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon" style="font-size:18px">🤗</span>
-                      <span>CSVQA-hard</span>
+                      <span>CSVQA</span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://csvqa-benchmark.github.io" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon" style="font-size:18px">🤗</span>
-                      <span>CSVQA(Comming Soon)</span>
+                    <a href="https://github.com/csvqa-benchmark/CSVQA" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>GitHub</span>
                     </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2505.24120" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-book-open"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
                   </span>
                   <span class="link-block">
                     <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
@@ -89,49 +100,93 @@
             <h2 class="title is-3">🔔News</h2>
             <div class="content has-text-justified">
               <p>
-                <b>🔥[Coming Soon]: Release the CSVQA benchmark and publish evaluation results for sub-domain models.</b>
+                <b>🔥[2025-06-02]: Our paper is now available on arXiv and we welcome citations: 
+                  <a href="https://arxiv.org/abs/2505.24120"><i>CSVQA: A Chinese Multimodal Benchmark for Evaluating STEM Reasoning Capabilities of VLMs</i></a>
+                </b>
               </p>
               <p>
-                <b>🔥[2025-03-18]: We open sourced our benckmark dataset on huggingface <a href="https://huggingface.co/datasets/Skywork/CSVQA-hard"><b>CSVQA-hard</b></a>. added initial model performance results to the <a href="#leaderboard">Leaderboard.</a></b>
+                <b>🔥[2025-05-30]: We developed a complete evaluation pipeline, and the implementation details are available on 
+                  <a href="https://github.com/csvqa-benchmark/CSVQA"><b>GitHub</b></a>.
+                </b>
               </p>
+
             </div>
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
               <p>
-               Chinese STEM Visual QA (CSVQA) is a high school education benchmark test set for multimodal science reasoning, including visual question answering tasks in four disciplines: <b>physics, mathematics, chemistry, and biology</b>. It aims to evaluate the performance of large-scale visual language models in complex tasks that require rigorous scientific reasoning. CSVQA contains 12 different types of images, including <b>tables, charts, diagrams, flowcharts, microscopic images, molecular models, chemical structures, geometric shapes, photos, paintings, mechanics diagrams, and circuit diagrams</b>.The dataset contains open-ended and selective questions. Unlike existing benchmark datasets that only focus on basic perception capabilities or low-difficulty text comprehension, CSVQA places special emphasis on the model's recognition, understanding, and reasoning capabilities in science subjects, especially the challenges faced when processing Chinese content.
+                Vision-Language Models (VLMs) have achieved remarkable progress in multimodal understanding, yet their scientific reasoning capabilities remain insufficiently evaluated. Existing multimodal benchmarks mainly focus on general image comprehension or text-based reasoning, lacking authentic scientific contexts that require domain-specific knowledge integrated with visual evidence analysis. To address this gap, we introduce <b>CSVQA</b>, a diagnostic multimodal benchmark designed specifically to evaluate scientific reasoning through domain-grounded visual question answering.
               </p>
               <p>
-                This benchmark proposes a cross-disciplinary multimodal reasoning task where models must integrate heterogeneous data modalities and establish cross-modal semantic associations. Such a design closely mirrors the authentic cognitive process of "experimental data analysis + theoretical derivation" in Chinese high school science education.
+                Our benchmark comprises 1,378 carefully crafted question-answer pairs across diverse STEM disciplines, each demanding domain knowledge, integration of visual evidence, and higher-order reasoning. Compared to previous benchmarks, CSVQA emphasizes real-world scientific content and complex reasoning tasks.
               </p>
               <p>
-                We plan to release two versions
-                <br>
-                <b>CSVQA-Hard:</b> is a pilot version of the CSVQA, which contains 30 difficult multi-modal science questions.
-                <br>
-                <b>CSVQA:</b> the full version of the CSVQA benchmark (coming soon) will further expand to include even more diverse question types and interdisciplinary challenges.
+                Additionally, we propose a rigorous evaluation protocol to systematically assess whether model predictions are supported by valid intermediate reasoning steps, based on curated explanations.
               </p>
             </div>
+            <!-- 新增图片 -->
+            <div style="text-align: center; margin-top: 20px;">
+              <img src="/static/images/challenges.png" alt="CSVQA Challenges" style="max-width: 100%; height: auto;">
+              </p>
+              </p>
+            </div>
+
             <h2 class="title is-3">Dataset Source</h2>
             <div class="content has-text-justified">
               <p>
-                Our data collection leverages a dynamic semantic alignment approach based on large language models, which significantly improves processing efficiency over traditional rule-based methods while ensuring high quality and rigor. The questions in our dataset are sourced from authoritative high school textbooks and Gaokao (national college entrance exam) papers.
+                The dataset is sourced from publicly available Chinese high school textbooks and examination papers across STEM disciplines. 
+                To ensure high-quality alignment, we use a four-phase quality control pipeline, improving efficiency over traditional methods.
               </p>
-              <p><b>OCR Processing:</b> We begin by structurally processing the original documents and integrating OCR techniques to convert both textual and graphical content into standardized formats. During this stage, a team of over 10 annotators is organized, and a dual verification mechanism is implemented to ensure high extraction accuracy.</p>
-              <p><b>Semantic Alignment:</b> To achieve precise matching between questions and answers, our team has designed an automatic alignment pipeline based on large language models. Using LLMs for semantic association analysis, we compute contextual embedding similarities to establish an initial mapping between question texts and candidate answer regions.</p>
-              <p><b>Manual Screening:</b> We then conduct thorough manual verification, focusing on complex scenarios such as multi-page questions and mixed text-image layouts, to ensure accurate correspondence between the components.</p>
-              <p><b>Multi-round Review and Finalization:</b> The dataset undergoes three independent rounds of review, including format compliance checks (via schema validation), content integrity confirmation (ensuring the completeness of question-answer-image triplets), and subject accuracy audits (through random sampling).</p>
+              <p>
+                The process begins by parsing source materials and applying OCR to extract textual and visual data. 
+                Then we apply an automated alignment pipeline which is powered by DeepSeekV3 to establish semantic correspondences between questions and answers.
+              </p>
+              <p>
+                Manual screening then addresses complex cases, such as multi-page layouts and mixed text-image formats. 
+                Finally, the benchmark undergoes three independent reviews: schema validation, integrity checks for completeness, and domain-specific audits with the help of annotators to ensure subject accuracy.
+              </p>
+              <p>
+                From an initial pool of approximately 100,000 raw entries, we filter out unsuitable question types like proof-based or diagram-drawing tasks, discard samples without associated images, and remove mismatched question-answer pairs as flagged by the LLM. 
+                A human-curated subset of high-quality multimodal items is retained for the final dataset.
+              </p>
             </div>
             <h2 class="title is-3">Key Features</h2>
             <div class="content has-text-justified">
               <p>
-                <p><b>Disciplines Covered:</b> Encompasses four major subjects—physics, chemistry, biology, and mathematics—based entirely on high school textbooks.</p>
-                <p><b>Question Types:</b> Includes both multiple-choice and open-ended questions, designed to assess in-depth understanding and multi-step reasoning in scientific knowledge.</p>  
-                <p><b>Diverse Images Types:</b> Contains 12 distinct types of scientific images such as function plots, circuit diagrams, and chemical structures.</p>
-                <p><b>Rich Explanations:</b> Each question comes with standard answers and detailed explanations, supporting both supervised and self-supervised learning.</p>
-                <p><b>High-Quality Annotation:</b> All data entries are meticulously verified by professional annotators to ensure accuracy.</p>
-                <p><b>Model Benchmarking:</b> To date, (to be determined) state-of-the-art models have been evaluated on this dataset.</p>
+                First, its coverage of multiple STEM disciplines requires diverse domain knowledge and reasoning strategies. 
+                Second, the inclusion of 14 distinct visual modalities introduces significant variation in visual structure and complexity, 
+                testing a model’s ability to generalize across image types. 
+                Third, many questions are grounded in real-world scenarios and demand domain-specific knowledge, requiring models to go beyond pattern recognition and engage in context-aware reasoning.
               </p>
+              <p>
+                An overview of the dataset’s composition is presented in the table below.
+                CSVQA contains 1,378 expert-annotated questions with moderate average length, balancing language processing load and reasoning depth. 
+                Nearly 81% of items are paired with a detailed explanation, which is particularly valuable for analyzing logical missteps in model predictions.
+                Furthermore, we incorporated a bilingual dataset generated after translation, allowing for a broader range of test scenarios.
+              </p>
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Statistics</th>
+                    <th>Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Total Questions</td><td>1,378</td></tr>
+                  <tr><td>Image Types</td><td>14</td></tr>
+                  <tr><td>Easy: Medium: Hard</td><td>22.6% : 67.4% : 10.0%</td></tr>
+                  <tr><td>Multiple-choice Questions</td><td>1,278</td></tr>
+                  <tr><td>Open Questions</td><td>100</td></tr>
+                  <tr><td>With an Explanation</td><td>81.1%</td></tr>
+                  <tr><td>Image in the Question</td><td>1,341</td></tr>
+                  <tr><td>Image in Option</td><td>37</td></tr>
+                  <tr><td>Average Question Length</td><td>69.7</td></tr>
+                  <tr><td>Average Option Length</td><td>12.1</td></tr>
+                  <tr><td>Average Explanation Length</td><td>123.5</td></tr>
+                </tbody>
+              </table>
+              <p class="has-text-grey is-size-7">To better compare with other datasets, the length analysis is conducted in English.</p>
             </div>
+
           </div>
         </div>
       </div>
@@ -146,101 +201,57 @@
     </section>
 
     <section class="section">
-      <div class="container" style="margin-bottom: 2vh;">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <!--  CSVQA-hard -->
-            <h2 class="title is-3" id="leaderboard">Leaderboard on CSVQA-hard</h2>
-            <div class="content has-text-centered">
-              <p>
-                Accuracy scores on the CSVQA-hard(30 examples)
-              </p>
-            </div>
-            <table class="js-sort-table" id="results">
-              <tr>
-                  <td class="js-sort-number"><strong>#</strong></td>
-                  <td class="js-sort-number"><strong>Model</strong></td>
-                  <td class="js-sort-number"><strong>Source</strong></td>
-                  <td class="js-sort-number"><strong>Date</strong></td>
-                  <td class="js-sort-number"><strong><u>ALL</u></strong></td>
-                  <td class="js-sort-number"><strong>Math</strong></td>
-                  <td class="js-sort-number"><strong>Physics</strong></td>
-                  <td class="js-sort-number"><strong>Biology</strong></td>
-                  <td class="js-sort-number"><strong>Chemistry</strong></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td><b class="best-score-text">InternVL2-Pro 🥇</b></td>
-                <td><a href="https://github.com/OpenGVLab/InternVL" class="ext-link" style="font-size: 16px;">Link</a></td>
-                <td>2024-09-04</td>
-                <td><b class="best-score-text">65.84</b></td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>                          
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><b class="best-score-text">InternVL2-8B-MPO 🥈</b></td>
-                <td><a href="https://internvl.github.io/blog/2024-11-14-InternVL-2.0-MPO/" class="ext-link" style="font-size: 16px;">Link</a></td>
-                <td>2024-11-14</td>
-                <td><b class="best-score-text">65.65</b></td>
-                <td>-</td> <!-- FQA (figure question answering) -->
-                <td>-</td> <!-- GPS (geometry problem solving) -->
-                <td>-</td> <!-- MWP (math word problem) -->
-                <td>-</td> <!-- TQA (textbook question answering) -->                      
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><b class="best-score-text">InternVL-Chat-V1.2-Plus 🥉</b></td>
-                <td><a href="https://arxiv.org/abs/2312.14238" class="ext-link" style="font-size: 16px;">Link</a></td>
-                <td>2024-02-22</td>
-                <td><b class="best-score-text">60.18</b></td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>                            
-              </tr>
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3" id="leaderboard">Leaderboard on CSVQA</h2>
+          <div class="content has-text-centered">
+            <p>
+              Accuracy of different models on CSVQA. Top scores in each column are <u><strong>underlined and bolded</strong></u>; second-best scores are <strong>bolded</strong>.
+            </p>
+          </div>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-hoverable is-fullwidth js-sort-table" id="results">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Overall</th>
+                  <th>Biology</th>
+                  <th>Chemistry</th>
+                  <th>Math</th>
+                  <th>Physics</th>
+                  <th>Open</th>
+                  <th>MC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="color: gray;"><td>Random Choice</td><td>5.2</td><td>5.1</td><td>6.2</td><td>4.5</td><td>5.7</td><td>0</td><td>5.7</td></tr>
+                <tr><td colspan="8"><b>Open-source VLM</b></td></tr>
+                <tr><td>Fuyu-8B</td><td>4.9</td><td>6.3</td><td>5.6</td><td>3.5</td><td>4.3</td><td>2.0</td><td>5.1</td></tr>
+                <tr><td>Deepseek-VL2</td><td>6.2</td><td>7.0</td><td>6.2</td><td>7.6</td><td>4.5</td><td>8.0</td><td>6.0</td></tr>
+                <tr><td>LLaVA1.5-13B</td><td>7.5</td><td>10.7</td><td>9.4</td><td>5.4</td><td>5.5</td><td>4.0</td><td>7.8</td></tr>
+                <tr><td>MonoInternVL</td><td>9.3</td><td>7.3</td><td>9.1</td><td>9.2</td><td>10.9</td><td>3.0</td><td>9.8</td></tr>
+                <tr><td>Idefics3-8b</td><td>10.1</td><td>11.7</td><td>15.2</td><td>7.0</td><td>7.1</td><td>4.0</td><td>10.6</td></tr>
+                <tr><td>Pixtral-12B</td><td>10.5</td><td>15.3</td><td>8.8</td><td>8.6</td><td>10.0</td><td>5.0</td><td>10.9</td></tr>
+                <tr><td>Phi-4</td><td>11.5</td><td>13.3</td><td>16.1</td><td>8.9</td><td>8.3</td><td>7.0</td><td>11.8</td></tr>
+                <tr><td>Gemma3-27B</td><td>22.9</td><td>26.0</td><td>23.5</td><td>27.0</td><td>17.1</td><td>23.0</td><td>22.9</td></tr>
+                <tr><td>Internvl2-5-78B</td><td>28.4</td><td>36.3</td><td>36.1</td><td>24.1</td><td>19.7</td><td>16.0</td><td>29.3</td></tr>
+                <tr><td>QVQ-72B</td><td>36.6</td><td>40.7</td><td>41.3</td><td>33.7</td><td>32.0</td><td>32.0</td><td>36.9</td></tr>
+                <tr><td>Internvl3-78B</td><td>37.4</td><td><u><strong>46.0</strong></u></td><td>41.1</td><td>36.5</td><td>28.9</td><td>30.0</td><td>38.0</td></tr>
+                <tr><td>Qwen2.5VL-72B</td><td>38.5</td><td>45.7</td><td>40.8</td><td>37.5</td><td>32.2</td><td>29.0</td><td>39.2</td></tr>
+                <tr><td colspan="8"><b>Closed-source VLM</b></td></tr>
+                <tr><td>GPT-4o</td><td>23.6</td><td>28.0</td><td>23.5</td><td>23.5</td><td>20.6</td><td>18.0</td><td>24.0</td></tr>
+                <tr><td>Claude3.7</td><td>36.6</td><td>41.7</td><td>38.1</td><td>37.1</td><td>31.3</td><td>32.0</td><td>36.9</td></tr>
+                <tr><td>Gemini2.0-flash</td><td><strong>44.1</strong></td><td>45.0</td><td><u><strong>45.5</strong></u></td><td><strong>47.6</strong></td><td><strong>39.8</strong></td><td><u><strong>46.0</strong></u></td><td><strong>44.0</strong></td></tr>
+                <tr><td>o1</td><td><u><strong>49.6</strong></u></td><td><u><strong>46.2</strong></u></td><td><strong>45.1</strong></td><td><u><strong>59.0</strong></u></td><td><u><strong>49.1</strong></u></td><td><strong>41.3</strong></td><td><u><strong>50.2</strong></u></td></tr>
+              </tbody>
             </table>
-            <br>
-            <br>
-            <!--  CSVQA -->
-            <h2 class="title is-3" id="leaderboard">Leaderboard on CSVQA</h2>
-            <div class="content has-text-centered">
-              <p>
-                Accuracy scores on the CSVQA(Comming Soon)
-              </p>
-            </div>
-            <table class="js-sort-table" id="results">
-              <tr>
-                  <td class="js-sort-number"><strong>#</strong></td>
-                  <td class="js-sort-number"><strong>Model</strong></td>
-                  <td class="js-sort-number"><strong>Source</strong></td>
-                  <td class="js-sort-number"><strong>Date</strong></td>
-                  <td class="js-sort-number"><strong><u>ALL</u></strong></td>
-                  <td class="js-sort-number"><strong>Math</strong></td>
-                  <td class="js-sort-number"><strong>Physics</strong></td>
-                  <td class="js-sort-number"><strong>Biology</strong></td>
-                  <td class="js-sort-number"><strong>Chemistry</strong></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td><b class="best-score-text">Comming Soon 🥇</b></td>
-                <td><a href="" class="ext-link" style="font-size: 16px;">Link</a></td>
-                <td>-</td>
-                <td><b class="best-score-text">-</b></td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>                          
-              </tr>
-            </table>
-
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-    </section>
 
 
 
@@ -248,14 +259,15 @@
       <div class="container is-max-desktop content">
         <h2 class="title is-3 has-text-centered">BibTeX</h2>
         <pre><code>
-          @misc{skyvl2025csvqa,
-            title={CSVQA: Chinese STEM Visual Question Answering},
-            author={Skywork-VL Team},
-            year={2025},
-            month={March},
-            howpublished={\url{https://huggingface.co/Skywork}},
-            url={https://huggingface.co/Skywork},
-          }
+    @misc{jian2025csvqachinesemultimodalbenchmark,
+        title={CSVQA: A Chinese Multimodal Benchmark for Evaluating STEM Reasoning Capabilities of VLMs}, 
+        author={Ai Jian and Weijie Qiu and Xiaokun Wang and Peiyu Wang and Yunzhuo Hao and Jiangbo Pei and Yichen Wei and Yi Peng and Xuchen Song},
+        year={2025},
+        eprint={2505.24120},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2505.24120}, 
+      }
     </code></pre>
       </div>
     </section>
